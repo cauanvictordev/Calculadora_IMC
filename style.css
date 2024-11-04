@@ -1,0 +1,145 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Corpo e layout principal */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #67b26f, #4ca2cd);
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: background-color 1s ease, transform 0.3s ease;
+    animation: fadeIn 1s ease-out, scaleIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    animation: slideDown 1s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .input-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="number"]:focus {
+    border-color: #4ca2cd;
+    outline: none;
+    animation: inputFocus 0.5s forwards;
+  }
+  
+  @keyframes inputFocus {
+    from { box-shadow: 0 0 0 rgba(0, 0, 0, 0); }
+    to { box-shadow: 0 0 10px rgba(76, 162, 205, 0.5); }
+  }
+  
+  button {
+    background: #4ca2cd;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+    animation: buttonPop 0.6s ease-out;
+  }
+  
+  button:hover {
+    background: #3d92b7;
+    transform: scale(1.05);
+  }
+  
+  @keyframes buttonPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .result {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+  }
+  
+  @keyframes showResult {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  
+  .container.underweight {
+    background-color: #ffecb3; /* Amarelo claro */
+  }
+  
+  .container.normal {
+    background-color: #b3e5fc; /* Azul claro */
+  }
+  
+  .container.overweight {
+    background-color: #ffe0b2; /* Laranja claro */
+  }
+  
+  .container.obese {
+    background-color: #ffb2b2; /* Vermelho claro */
+  }
+  
+  /* Responsividade para dispositivos menores */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
